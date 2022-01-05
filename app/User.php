@@ -55,11 +55,6 @@ class User extends Authenticatable
         });
     }
 
-    public function following()
-    {
-        return $this->belongsToMany(Profile::class);
-    }
-
     public function recipes(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Recipe::class)->

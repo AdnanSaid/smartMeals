@@ -52,7 +52,7 @@
 
                 <div class="tab-pane fade" id="following">
                     <div class="row pt-5">
-
+=                      <span class="text-dark">{{ $friends }}</span>
                     </div>
                 </div>
 

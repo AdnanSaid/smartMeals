@@ -54,7 +54,7 @@ Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.upda
 Route::post('/{user:name}/befriend', 'ProfilesController@befriendUser')->name('user.befriend');
 Route::post('{user:name}/unfriend', 'ProfilesController@unfriendUser')->name('user.unfriend');
 
-Route::get('/followers/{user}', 'AcquaintancesController@index')->name('acquaintances.index');
+Route::get('/followers/{user:username}', 'FriendsController@index')->name('user.friends');
 
 });
 
