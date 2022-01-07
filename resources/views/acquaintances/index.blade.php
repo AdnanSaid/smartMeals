@@ -52,10 +52,26 @@
 
                 <div class="tab-pane fade" id="following">
                     <div class="row pt-5">
-=                      <span class="text-dark">{{ $friends }}</span>
+                    @foreach($friends as $friend)
+                    <div class="container">
+                        <div class="d-flex align-items-center">
+                            <div class="pr-3">
+                                <img
+                                    src="{{ $friend->profile->profileImage() }}"
+                                    class="rounded-circle w-100"
+                                    style="max-width: 40px;">
+                            </div>
+                            <div>
+                                <div class="font-weight-bold">
+                                    <a href="/profile/{{ $user->id }}">
+                                        <span class="text-dark">{{ $friend->username }}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
+                    @endforeach
+                    </div>
             </div>
 
     </div>
