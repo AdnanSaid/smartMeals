@@ -3,21 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Profile;
+use App\Recipe;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FriendsController extends Controller
 {
+    public function __construct()
 
-    public function index(User $user)
     {
-        $friends=$user->getAllFriendships();
+        $this->middleware('auth');
+    }
 
-        $user = User::all()->pluck('username');
+    public function index(User $user, Profile $profile, Recipe $recipe)
+    {
+        $friends=$user->getFriends();
 
-        $profiles = Profile::all();
-
-        return view('acquaintances.index', compact('friends', 'user', 'profiles'));
+        return view('acquaintances.index', compact('friends', 'user'));
     }
 
 }

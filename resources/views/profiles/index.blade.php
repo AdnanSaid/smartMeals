@@ -134,11 +134,11 @@
                     <div class="pr-5"><strong>{{ $postCount }}</strong> posts</div>
                     <div class="pr-5">
                         <strong>0</strong>
-                        <a href="/followers/{user}">followers</a>
+                        <a href="/followers/{{$user->username}}">followers</a>
                     </div>
                     <div class="pr-5">
                         <strong>0</strong>
-                        <a href="/followers/{user}">following</a>
+                        <a href="/followers/{{$user->username}}">following</a>
                     </div>
                 </div>
 
